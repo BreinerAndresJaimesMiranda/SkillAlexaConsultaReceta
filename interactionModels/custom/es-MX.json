@@ -1,0 +1,103 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "receta",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.647413064463.941029713834"
+              }
+            }
+          ],
+          "name": "NombreDeReceta",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "receta",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "NombreDeReceta",
+          "samples": [
+            "muestrame la receta para un {receta}",
+            "muestrame la receta para {receta}",
+            "consulta la receta de un {receta}",
+            "consulta la receta de {receta}",
+            "muestrame la receta de un {receta}",
+            "receta para {receta}",
+            "receta de {receta}",
+            "muestra la receta {receta}",
+            "abre la receta {receta}",
+            "Muestrame la receta de {receta}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "receta para"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tengo referencia a esa receta, puedes probar con otra?"
+          }
+        ],
+        "id": "Elicit.Slot.647413064463.941029713834"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "la cantidad no es valida"
+          }
+        ],
+        "id": "Elicit.Slot.1077909890623.1226901906738"
+      }
+    ]
+  }
+}
